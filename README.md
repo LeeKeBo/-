@@ -7,3 +7,5 @@
     + change the username and the password in the bat file,and choice the correct host to load.
     + if you are from szu, choice the host depend on which area you are in. else, change the host to the onload host in your school.
     + also, you can add the file to the auto-start file when you boot.
+
++ 用途： 校园网自动重连程序，只需修改用户名和密码以及登录网址即可实现断线重连
