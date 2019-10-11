@@ -7,7 +7,7 @@ chcp 437
 call:sleep 1000
 
 ping /n 1 www.baidu.com | find "Request timed out" || goto run
-curl -s -d "DDDDD=free1" -d "upass=szu123456" -d "0MKKey=" drcom.szu.edu.cn >test.txt
+curl -s -d "DDDDD={$username}" -d "upass={$password}" -d "0MKKey=" drcom.szu.edu.cn >test.txt
 goto loop
 :run
 echo yes
