@@ -2,35 +2,96 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
-<title>登录成功窗</title>
+<title>信息返回窗</title>
 <!--  哆点下载开始  -->
 <script type="text/javascript" src="a52.js"></script>
 <script type="text/javascript" src="a51.js"></script>
 <link rel="stylesheet" href="a50.css" type="text/css" media="screen" />
 <!--  哆点下载结束  -->
-<script language="JavaScript"><!--
-Gno=09;UID='free1                     ';m=0;UL='                                                                                                                                                                                                        ';mcode="FFFF";
-url1='http://172.30.255.2:9002/0'     ;
-sv=0;u6='http://                                                ';if(sv==1)url1=u6;
-
-if((navigator.userAgent.indexOf('iPad') > 0) || (navigator.userAgent.indexOf('Windows NT') > 0))tmphtml=0;
-else if((navigator.userAgent.indexOf('Mobile') > 0) ){tmphtml=1;}
-else tmphtml=0;
-//if(tmphtml==0)window.open(url1,'','width=280,height=60,left=0,top=0,resizable=1');
-
-if(m!=0)window.location=UL;
-else{    window.location='https://ctc-cmcc.szu.edu.cn/1.htm'                                                 ;   }
-
+<SCRIPT language=javascript>
+<!--     		
+Msg=01;time='1234567890';flow='1234567890';fsele=0;fee='1234567890';xsele=0;xip='000.000.000.000.';mac='00-00-00-00-00-00';va=00;vb=00;vc=00;vd=0000;ve=0000;vf=0000;
+ipm="ac1eff02";ss1="000d484e793e";ss2="0000";ss3="ac1d1f07";ss4="000000000000";msga='userid error1';                                                                   
+pp="<br>";
+flow0=flow%1024;flow1=flow-flow0;flow0=flow0*1000;flow0=flow0-flow0%1024;fee1=fee-fee%100;
+flow3='.';
+if(flow0/1024<10)flow3='.00';
+else{if(flow0/1024<100)flow3='.0';}
+UT="已使用时间 : "+time +" Min"+pp;
+UF="已使用流量 : "+flow1/1024+flow3+flow0/1024+" MByte"+pp;
+if(fsele==1)UM="本账号余额 : "+"RMB"+fee1/10000;
+else UM="";
+function DispTFM(){
+	switch(Msg){
+		case 0:
+		case 1:
+			if((Msg==1)&&(msga!="")){
+			switch(msga){
+			case 'error0':
+				document.write("本IP不允许Web方式登录");
+				break;
+			case 'error1':
+				document.write("本账号不允许Web方式登录");
+				break;
+			case 'error2':
+				document.write("本账号不允许修改密码");
+				break;				
+			default:
+				document.write(msga);
+				break;}
+			}
+			else document.write("账号或密码不对，请重新输入");
+		break;      		
+	case 2:
+		document.write("该账号正在使用中，请您与网管联系"+pp+xip+pp+mac);
+		break;      		
+	case 3:
+		document.write("本账号只能在指定地址使用<br>This account can be used on the appointed address only."+pp+xip);
+		break;
+	case 4:
+		document.write("本账号费用超支或时长流量超过限制");
+		break;
+	case 5:
+		document.write("本账号暂停使用");
+		break;
+	case 6:
+		document.write("System buffer full");
+		break;      		
+	case 8:
+		document.write("本账号正在使用,不能修改");
+		break;
+	case 9:
+		document.write("新密码与确认新密码不匹配,不能修改");
+		break;
+	case 10:
+		document.write("密码修改成功");
+		break;
+	case 11:
+		document.write("本账号只能在指定地址使用 :"+pp+mac);
+		break;      	
+		case 7:
+	      	document.write(UT+UF+UM);
+		break;
+	case 14:
+		document.write("注销成功"+pp+UT+UF+UM);
+		break;
+	case 15:
+		document.write("登录成功"+pp+UT+UF+UM);
+		break;
+		}}
+		
 function checkphone(){
-if(tmphtml==0)return;
-PostForm.RET.value=33;
-PostForm.INFO.value="Gno="+Gno+";UID='"+UID+"';m="+m+";UL='"+UL+"';url1='"+url1+"';";
+if((navigator.userAgent.indexOf('iPad') > 0) || (navigator.userAgent.indexOf('Windows NT') > 0))return;
+if((navigator.userAgent.indexOf('Mobile') > 0) ){}
+else return;
+PostForm.RET.value=32;
+PostForm.INFO.value="Msg="+Msg+";time="+time+";flow="+flow+";fsele="+fsele+";fee="+fee+";xsele="+xsele+";va="+va+";vb="+vb+";vc="+vc+";vd="+vd+";ve="+ve+";vf="+vf
+	+";xip='"+xip+"';mac='"+mac	+"';ipm='"+ipm+"';ss1='"+ss1+"';ss2='"+ss2+"';ss3='"+ss3+"';ss4='"+ss4+"';msga='"+msga+"';";
 document.PostForm.submit();
 }
-
-location.href="1.htm";
-
-// --></script>
+		
+// -->
+</SCRIPT>
 <style><!--
 a {text-decoration: none; color:#2365AF;}
 body {margin:0; padding:0; text-align:center; background-color:#EFF9FE;}
@@ -67,7 +128,7 @@ background-image: -webkit-gradient(linear, left top, left bottom, from(#ffb94b),
 }
 --></style>
 </head>
-<!--Dr.COMWebLoginID_3.htm-->
+<!--Dr.COMWebLoginID_2.htm-->
 <body onload="checkphone()">
 <div class="con">
 	<div class="bg">
@@ -78,17 +139,19 @@ background-image: -webkit-gradient(linear, left top, left bottom, from(#ffb94b),
 <!--  哆点下载开始  -->
 <div id="download" style="float:top; margin-top: 60px;"></div>
 <!--  哆点下载结束  -->
-
-			<div id="foot" style="float:top; height:20px; margin-top: 0px;" class="font2">
+<div id="foot" style="float:top; height:20px; margin-top: 0px;" class="font2">
 			本宽带接入服务器由城市热点提供
 			</div>
 		</div>
-
+		
 <div id="login" style="float:left; width:300px; height:245px; margin-top: 133px; margin-left:52px">
 <div style="background:url(a58.png) no-repeat center; width:300px; height:75px; margin-bottom:10px;"></div>
 		<form name="f1" method="post" action="">
-			<div id="info" style="height:100px; padding-top:30px;" class="font1">
-				您已经成功登录。<br>在完成工作后，请别忘记注销。
+			<div id="info" style="height:100px; padding-top:12px;" class="font1">
+				<script language=javascript>DispTFM()</script>
+			</div>
+			<div id="btn" style="height:30px; margin-top:22px;">
+				<input id="submit" type="button" value="返　回" onClick="location='/                           '" style="margin-left:95px;">
 			</div>
 			</form>
 		</div>
